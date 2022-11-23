@@ -5,7 +5,7 @@ import 'package:fake_store_api/utils/title_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../product/product_screen.dart';
+import '../screens/product/product_screen.dart';
 
 class ProductItem extends StatelessWidget {
   final int index;

@@ -42,55 +42,61 @@ class ProductPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(bottom: 20),
-              decoration: const BoxDecoration(
-                color: mainWhite,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
+      body: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(bottom: 20),
+                decoration: const BoxDecoration(
+                  color: mainWhite,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
                 ),
-              ),
-              child: Center(
-                child: Hero(
-                  tag: 'product$index',
-                  child: Image.network(
-                    product.image,
-                    height: size.height / 2,
+                child: Center(
+                  child: Hero(
+                    tag: 'product$index',
+                    child: Image.network(
+                      product.image,
+                      height: size.height / 2,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              width: 40,
-              child: Align(
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    CircleAvatar(
-                      radius: 3,
-                      backgroundColor: mainGrey,
-                    ),
-                    CircleAvatar(
-                      radius: 5,
-                      backgroundColor: mainBlack,
-                    ),
-                    CircleAvatar(
-                      radius: 3,
-                      backgroundColor: mainGrey,
-                    ),
-                  ],
+              SizedBox(
+                width: 40,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      CircleAvatar(
+                        radius: 3,
+                        backgroundColor: mainGrey,
+                      ),
+                      CircleAvatar(
+                        radius: 5,
+                        backgroundColor: mainBlack,
+                      ),
+                      CircleAvatar(
+                        radius: 3,
+                        backgroundColor: mainGrey,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            DescCard(index),
-          ],
+              DescCard(index),
+            ],
+          ),
         ),
       ),
     );

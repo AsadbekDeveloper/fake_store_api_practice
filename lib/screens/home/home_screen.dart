@@ -4,7 +4,7 @@ import 'package:fake_store_api/providers/products.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'product_item.dart';
+import '../../widgets/product_item.dart';
 import 'search_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,42 +52,48 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       extendBodyBehindAppBar: true,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
-          ),
-          child: Column(
-            children: [
-              const SearchBar(),
-              const SizedBox(
-                height: 20,
-              ),
-              products.isLoading
-                  ? const Expanded(
-                      child: Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    )
-                  : Expanded(
-                      child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 30,
-                          crossAxisSpacing: 30,
-                          childAspectRatio: 3 / 5,
+      body: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 20,
+            ),
+            child: Column(
+              children: [
+                const SearchBar(),
+                const SizedBox(
+                  height: 20,
+                ),
+                products.isLoading
+                    ? const Expanded(
+                        child: Center(
+                          child: CircularProgressIndicator(),
                         ),
-                        itemCount: products.producstList.length,
-                        itemBuilder: ((context, index) {
-                          return ProductItem(
-                            index,
-                          );
-                        }),
+                      )
+                    : Expanded(
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 30,
+                            crossAxisSpacing: 30,
+                            childAspectRatio: 3 / 5,
+                          ),
+                          itemCount: products.producstList.length,
+                          itemBuilder: ((context, index) {
+                            return ProductItem(
+                              index,
+                            );
+                          }),
+                        ),
                       ),
-                    ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
