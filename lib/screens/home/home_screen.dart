@@ -1,3 +1,4 @@
+import 'package:fake_store_api/constants/colors.dart';
 import 'package:fake_store_api/providers/product_model.dart';
 import 'package:fake_store_api/providers/products.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,7 @@ class _HomePageState extends State<HomePage> {
               vertical: 5,
             ),
             child: CircleAvatar(
+              backgroundColor: mainGrey,
               backgroundImage: NetworkImage(
                 'https://i.pravatar.cc/30',
               ),
@@ -54,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
-            vertical: 30,
+            vertical: 20,
           ),
           child: Column(
             children: [
@@ -64,10 +66,10 @@ class _HomePageState extends State<HomePage> {
               ),
               products.isLoading
                   ? const Expanded(
-                    child: Center(
+                      child: Center(
                         child: CircularProgressIndicator(),
                       ),
-                  )
+                    )
                   : Expanded(
                       child: GridView.builder(
                         gridDelegate:

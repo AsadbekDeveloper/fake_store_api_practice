@@ -1,6 +1,9 @@
 import 'package:fake_store_api/constants/text_styles.dart';
+import 'package:fake_store_api/providers/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../constants/colors.dart';
+import '../../widgets/shopping_cart.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
@@ -9,9 +12,11 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartCount = Provider.of<Cart>(context).getCart.keys.length;
     return SizedBox(
       height: 50,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: TextField(
@@ -36,18 +41,7 @@ class SearchBar extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          Container(
-            height: double.infinity,
-            width: 50,
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: mainWhite,
-            ),
-            child: Image.asset(
-              'assets/menu.png',
-            ),
-          ),
+          ShoppingCart(cartCount: cartCount),
         ],
       ),
     );

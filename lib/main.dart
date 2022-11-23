@@ -1,4 +1,5 @@
 import 'package:fake_store_api/constants/colors.dart';
+import 'package:fake_store_api/providers/cart.dart';
 import 'package:fake_store_api/providers/products.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,8 +9,11 @@ import 'screens/home/home_screen.dart';
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    ChangeNotifierProvider(
-      create: ((context) => Products()),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Products()),
+        ChangeNotifierProvider(create: (context) => Cart()),
+      ],
       child: const MyApp(),
     ),
   );
