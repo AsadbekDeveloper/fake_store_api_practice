@@ -51,7 +51,7 @@ class CartPage extends StatelessWidget {
                         amount: cart.getCart.values.elementAt(index))),
                   ),
                 ),
-                PromoInput(),
+                const PromoInput(),
                 Column(
                   children: [
                     Padding(
@@ -70,7 +70,7 @@ class CartPage extends StatelessWidget {
                             '(${cart.getCart.length.toString()} items)',
                             style: descText,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
                           Text(

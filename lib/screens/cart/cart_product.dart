@@ -15,14 +15,14 @@ class CartProduct extends StatelessWidget {
     final product = Provider.of<Products>(context).getByIndex(index);
     return Container(
       height: 100,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.symmetric(
         vertical: 10,
       ),
       child: Row(
         children: [
           Container(
-            decoration: BoxDecoration(boxShadow: [
+            decoration: const BoxDecoration(boxShadow: [
               BoxShadow(
                 offset: Offset(1, 3),
                 spreadRadius: -5,
@@ -35,7 +35,7 @@ class CartProduct extends StatelessWidget {
               child: Container(
                 width: 80,
                 height: 80,
-                decoration: BoxDecoration(color: mainWhite),
+                decoration: const BoxDecoration(color: mainWhite),
                 padding: const EdgeInsets.all(5),
                 child: Image.network(
                   product.image,
@@ -43,7 +43,7 @@ class CartProduct extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Expanded(
@@ -87,7 +87,7 @@ class CartProduct extends StatelessWidget {
                               shape: BoxShape.circle,
                               border: Border.all(width: 1),
                             ),
-                            child: Icon(Icons.remove),
+                            child: const Icon(Icons.remove),
                           ),
                           Text(
                             amount.toString(),
@@ -101,7 +101,7 @@ class CartProduct extends StatelessWidget {
                               color: mainBlack,
                               border: Border.all(width: 1),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.add,
                               color: mainWhite,
                             ),

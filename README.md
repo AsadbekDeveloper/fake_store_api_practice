@@ -1,16 +1,10 @@
-# fake_store_api
+# Store app UI
+Ispired by Dribbble design
 
-A new Flutter project.
+### Preview
 
-## Getting Started
+![Preview gif](./assets/preview/fake_store.gif)
 
-This project is a starting point for a Flutter application.
+## Author
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* **Janabaev Asadbek**  - [asadbekdeveloper](https://github.com/AsadbekDeveloper)
