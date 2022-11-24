@@ -1,8 +1,11 @@
 # Store app UI
-Ispired by Dribbble design
+Ispired by Dribbble desiger [Mahmudur Rahman](https://dribbble.com/MahmuduR)
 
-### Preview
+### Previews
 
+![Preview home](./assets/preview/fake_store_1.png)
+![Preview product](./assets/preview/fake_store_2.png)
+![Preview cart](./assets/preview/fake_store_3.png)
 ![Preview gif](./assets/preview/fake_store.gif)
 
 ## Author
